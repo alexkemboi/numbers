@@ -2,7 +2,6 @@ class Numbers {
   static isEven(num) {
     return num % 2 === 0;
   }
-
   static isOdd(num) {
     return num % 2 !== 0;
   }
@@ -21,8 +20,16 @@ class Numbers {
 
     return result;
   }
+
+  static isPalidrome(word) {
+    let isCharacterEquals = true;
+    for (let i = 0; i < word.length / 2; i++) {
+      if (word[i] !== word[word.length - 1 - i]) {
+        isCharacterEquals = false;
+      }
+    }
+    return isCharacterEquals;
+  }
 }
-const num = 10;
-console.log(Numbers.isEven(num));
-console.log(Numbers.isOdd(num));
-console.log(Numbers.fibonacci(num));
+
+export default Numbers;
